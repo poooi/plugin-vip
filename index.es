@@ -1,4 +1,5 @@
 var styleEl;
+var musicEl;
 
 let enableTwinkle = () => {
   if (styleEl === undefined) {
@@ -25,6 +26,25 @@ let enableTwinkle = () => {
     }`, 0);
 };
 
+let enableMusic = (name = "young-TFBOYS") => {
+  if (musicEl === undefined) {
+    musicEl = document.createElement('audio');
+    document.body.appendChild(musicEl);
+  }
+  let path = require('path-extra');
+  musicEl.src = path.join(window.PLUGIN_PATH, 'node_modules', 'poi-plugin-vip',
+                          'assets', 'music', `${name}.mp3`);
+  musicEl.loop = true;
+  musicEl.play();
+};
+
+let disableMusic = () => {
+  if (musicEl !== undefined) {
+    musicEl.pause();
+    musicEl.currentTime = 0;
+  }
+};
+
 let disableTwinkle = () => {
   if (styleEl !== undefined) {
     let styleSheet = styleEl.sheet;
@@ -38,9 +58,11 @@ const VipPlugin = {
   show: false,
   pluginDidLoad: (e) => {
     enableTwinkle();
+    enableMusic();
   },
   pluginWillUnload: (e) => {
     disableTwinkle();
+    disableMusic();
   }
 }
 
