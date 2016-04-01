@@ -1,0 +1,37 @@
+{
+  "name": "poi-plugin-vip",
+  "version": "0.0.1",
+  "description": "kira kira vip for poi",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/poooi/plugin-vip.git"
+  },
+  "keywords": [
+    "kancolle",
+    "poi",
+    "plugin",
+    "vip"
+  ],
+  "author": {
+    "name": "Jennings Wu",
+    "link": "https://github.com/JenningsWu"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/poooi/plugin-vip/issues"
+  },
+  "homepage": "https://github.com/poooi/plugin-vip",
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "poiPlugin": {
+    "title": "VIP",
+    "description": "kira kira vip",
+    "icon": "fa/diamond",
+    "priority": 10
+  }
+}
